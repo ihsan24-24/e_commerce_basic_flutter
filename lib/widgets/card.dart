@@ -10,27 +10,38 @@ class ProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: MediaQuery.of(context).size.width / 7,
-      height: MediaQuery.of(context).size.height / 3,
       child: Card(  
-        child:Column(
-          children: [
-            Text(product.title),
-            Image.network(product.image, 
-            fit: BoxFit.fill, 
-            width: MediaQuery.of(context).size.width / 8,
-            height: MediaQuery.of(context).size.height / 10,
-
+        child:Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                product.title,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+              ),
+              Image.network(product.image, 
+              fit: BoxFit.fill, 
+              width: MediaQuery.of(context).size.width / 8,
+              height: MediaQuery.of(context).size.height / 10,
+          
+              ),
+              Text(product.category),
+              Wrap(
+                children: [Text(
+                  product.description,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                  ),
+                ]
+              ),
+              Text(product.price.toString()),
+              Text(product.rating.rate.toString()),
+              Text(product.rating.count.toString())
+            ],
             ),
-            Text(product.category),
-            Text(product.description),
-            Text(product.price.toString()),
-            Text(product.rating.rate.toString()),
-            Text(product.rating.count.toString())
-
-
-          ],
-          )
+        )
         ),
     );
   }

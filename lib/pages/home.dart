@@ -1,4 +1,4 @@
-import 'package:demo/services/product_service.dart';
+import 'package:demo/services/products_service.dart';
 import 'package:demo/widgets/card.dart';
 import 'package:demo/widgets/drawer.dart';
 import 'package:flutter/material.dart';
