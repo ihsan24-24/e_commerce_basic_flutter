@@ -1,3 +1,5 @@
+import 'package:demo/global_variables.dart';
+
 class Product {
   int id;
   String title;
@@ -18,6 +20,7 @@ class Product {
   });
 
   factory Product.fromJson(Map<String, dynamic> json){
+    
     return Product(
       id: json["id"], 
       title: json["title"], 
