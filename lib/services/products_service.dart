@@ -1,9 +1,9 @@
 import 'dart:convert';
-
 import 'package:demo/global_variables.dart';
 import 'package:demo/models/product.dart';
-import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+
+
 
 String url = "https://fakestoreapi.com/products";
 
@@ -20,6 +20,6 @@ Future<List<Product>> fetchProducts () async {
 return products;
 
   } else {
-    throw Exception("data fetch error");
+    throw Exception("Veri çekilirken hata oluştu");
   }
 }
